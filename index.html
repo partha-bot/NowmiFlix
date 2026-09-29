@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10131e">
 
-  <title>NowmiFlix</title>
+  <title>NowmiFlix | Discover More</title>
+  <meta name="description"
+        content="Discover movies, anime, manga, K-drama and more with NowmiFlix.">
 
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
   <header class="navbar">
@@ -16,110 +18,127 @@
 
     <nav>
       <a href="#home">Home</a>
-      <a href="#movies">Movies</a>
-      <a href="#series">Series</a>
+      <a href="#categories">Categories</a>
+      <a href="#sites">Explore</a>
     </nav>
   </header>
 
-
   <main id="home">
-
     <section class="hero">
       <div class="hero-content">
-        <p class="tagline">WELCOME TO</p>
-
-        <h1>Nowmi<span>Flix</span></h1>
-
-        <p class="description">
-          Discover movies, series and more in one place.
+        <span class="eyebrow">YOUR ENTERTAINMENT DIRECTORY</span>
+        <h1>Discover Your <span>Next Favorite</span></h1>
+        <p>
+          Explore movies, anime, manga, K-drama and more,
+          all in one place.
         </p>
 
-        <a href="#movies" class="hero-btn">Explore Now</a>
+        <a href="#categories" class="hero-btn">Explore Categories</a>
       </div>
     </section>
 
-
-    <section class="section" id="movies">
-
-      <div class="section-title">
-        <h2>Featured Movies</h2>
-        <p>Explore our collection</p>
+    <section class="search-section">
+      <div class="search-box">
+        <span class="search-icon">⌕</span>
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search websites..."
+          aria-label="Search websites"
+        >
+        <button id="clearSearch" aria-label="Clear search">×</button>
       </div>
-
-      <div class="cards">
-
-        <article class="card">
-          <div class="poster">MOVIE</div>
-          <div class="card-info">
-            <h3>Movie One</h3>
-            <p>2026 • Movie</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="poster">MOVIE</div>
-          <div class="card-info">
-            <h3>Movie Two</h3>
-            <p>2026 • Movie</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="poster">MOVIE</div>
-          <div class="card-info">
-            <h3>Movie Three</h3>
-            <p>2026 • Movie</p>
-          </div>
-        </article>
-
-      </div>
-
     </section>
 
-
-    <section class="section" id="series">
-
-      <div class="section-title">
-        <h2>Popular Series</h2>
-        <p>Find something to watch</p>
+    <section class="section" id="categories">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">BROWSE</span>
+          <h2>Explore Categories</h2>
+          <p>Find websites based on your interests.</p>
+        </div>
       </div>
 
-      <div class="cards">
-
-        <article class="card">
-          <div class="poster">SERIES</div>
-          <div class="card-info">
-            <h3>Series One</h3>
-            <p>2026 • Series</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="poster">SERIES</div>
-          <div class="card-info">
-            <h3>Series Two</h3>
-            <p>2026 • Series</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="poster">SERIES</div>
-          <div class="card-info">
-            <h3>Series Three</h3>
-            <p>2026 • Series</p>
-          </div>
-        </article>
-
+      <div class="category-list">
+        <button class="category active" data-category="all">All</button>
+        <button class="category" data-category="movies">🎬 Movies & Shows</button>
+        <button class="category" data-category="anime">🍥 Anime</button>
+        <button class="category" data-category="manga">📚 Manga</button>
+        <button class="category" data-category="sports">📺 Live TV & Sports</button>
+        <button class="category" data-category="kdrama">🇰🇷 K-Drama</button>
       </div>
-
     </section>
 
+    <section class="section sites-section" id="sites">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">DISCOVER</span>
+          <h2>Explore Websites</h2>
+          <p id="resultText">Browse our website directory.</p>
+        </div>
+      </div>
+
+      <div class="site-grid" id="siteGrid">
+
+        <article class="site-card" data-category="movies">
+          <div class="site-icon">🎬</div>
+          <div class="site-info">
+            <h3>Movies & Shows</h3>
+            <p>Discover movie and TV show platforms.</p>
+            <span class="site-category">Movies & Shows</span>
+          </div>
+        </article>
+
+        <article class="site-card" data-category="anime">
+          <div class="site-icon">🍥</div>
+          <div class="site-info">
+            <h3>Anime</h3>
+            <p>Explore anime websites and services.</p>
+            <span class="site-category">Anime</span>
+          </div>
+        </article>
+
+        <article class="site-card" data-category="manga">
+          <div class="site-icon">📚</div>
+          <div class="site-info">
+            <h3>Manga</h3>
+            <p>Find manga and comic reading platforms.</p>
+            <span class="site-category">Manga</span>
+          </div>
+        </article>
+
+        <article class="site-card" data-category="sports">
+          <div class="site-icon">📺</div>
+          <div class="site-info">
+            <h3>Live TV & Sports</h3>
+            <p>Discover TV and sports platforms.</p>
+            <span class="site-category">Live TV & Sports</span>
+          </div>
+        </article>
+
+        <article class="site-card" data-category="kdrama">
+          <div class="site-icon">🇰🇷</div>
+          <div class="site-info">
+            <h3>K-Drama</h3>
+            <p>Explore Korean drama platforms.</p>
+            <span class="site-category">K-Drama</span>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="empty-message" id="emptyMessage" hidden>
+        No matching categories found.
+      </p>
+    </section>
   </main>
 
-
   <footer>
-    <p>© 2026 NowmiFlix</p>
+    <a href="#home" class="logo">Nowmi<span>Flix</span></a>
+    <p>A directory to discover entertainment websites.</p>
+    <p class="copyright">© 2026 NowmiFlix</p>
   </footer>
- <script src="script.js"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>
