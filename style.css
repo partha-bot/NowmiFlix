@@ -407,3 +407,22 @@ footer .copyright {
     font-size: 36px;
   }
 }
+.creator {
+  display: block;
+  margin-top: 2px;
+  font-size: 10px;
+  color: #9ba4b7;
+  letter-spacing: 1px;
+}
+
+.creator-badge {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 4px 18px rgba(124, 58, 237, 0.25);
+}
