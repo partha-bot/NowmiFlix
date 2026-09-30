@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10131e">
+
+  <title>NowmiFlix | Discover More</title>
+  <meta name="description"
+        content="Discover movies, anime, manga, K-drama and more with NowmiFlix.">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo-wrap">
+    <div class="logo">Nowmi<span>Flix</span></div>
+    <div class="logo-author">by Partha</div>
+</div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#sites">Explore</a>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">YOUR ENTERTAINMENT DIRECTORY</span>
+        <h1>Everything You Love, <span>One Place</span></h1>
+        <p>
+          Explore movies, anime, manga, K-drama and more,
+          all in one place.
+        </p>
+
+        <a href="#categories" class="hero-btn">Explore Categories</a>
+      </div>
+    </section>
+
+    <section class="search-section">
+      <div class="search-box">
+        <span class="search-icon">⌕</span>
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search websites..."
+          aria-label="Search websites"
+        >
+        <button id="clearSearch" aria-label="Clear search">×</button>
+      </div>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">BROWSE</span>
+          <h2>Explore Categories</h2>
+          <p>Find websites based on your interests.</p>
+        </div>
+      </div>
+
+      <div class="category-list">
+        <button class="category active" data-category="all">All</button>
+        <button class="category" data-category="movies">🎬 Movies & Shows</button>
+        <button class="category" data-category="anime">🍥 Anime</button>
+        <button class="category" data-category="manga">📚 Manga</button>
+        <button class="category" data-category="sports">📺 Live TV & Sports</button>
+        <button class="category" data-category="kdrama">🇰🇷 K-Drama</button>
+      </div>
+    </section>
+
+    <section class="section sites-section" id="sites">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">DISCOVER</span>
+          <h2>Explore Websites</h2>
+          <p id="resultText">Browse our website directory.</p>
+        </div>
+      </div>
+
+      <div class="site-grid" id="siteGrid">
+
+        <article class="site-card" data-category="movies">
+          <div class="site-icon">🎬</div>
+          <div class="site-info">
+            <h3>Movies & Shows</h3>
+            <p>Discover movie and TV show platforms.</p>
+            <span class="site-category">Movies & Shows</span>
+          </div>
+        </article>
+
+        <a class="site-card" data-category="anime" href="https://enma.lol/" target="_blank" rel="noopener noreferrer">
+          <div class="site-icon">🍥</div>
+          <div class="site-info">
+            <h3>ENMA</h3>
+            <p>Explore anime streaming websites.</p>
+            <span class="site-category">Anime</span>
+          </div>
+        </a>
+
+        <a class="site-card" data-category="anime" href="https://yenime.net/" target="_blank" rel="noopener noreferrer">
+          <div class="site-icon">🍥</div>
+          <div class="site-info">
+            <h3>YENIME</h3>
+            <p>Explore anime streaming websites.</p>
+            <span class="site-category">Anime</span>
+          </div>
+        </a>
+
+        <a class="site-card" data-category="anime" href="https://anishows.org/" target="_blank" rel="noopener noreferrer">
+          <div class="site-icon">🍥</div>
+          <div class="site-info">
+            <h3>ANY SHOWS</h3>
+            <p>Explore anime streaming websites.</p>
+            <span class="site-category">Anime</span>
+          </div>
+        </a>
+
+        <a class="site-card" data-category="anime" href="https://reanime.to/" target="_blank" rel="noopener noreferrer">
+          <div class="site-icon">🍥</div>
+          <div class="site-info">
+            <h3>REANIME</h3>
+            <p>Explore anime streaming websites.</p>
+            <span class="site-category">Anime</span>
+          </div>
+        </a>
+
+        <a class="site-card" data-category="anime" href="https://anikototv.to/" target="_blank" rel="noopener noreferrer">
+          <div class="site-icon">🍥</div>
+          <div class="site-info">
+            <h3>ANIKOTO TV</h3>
+            <p>Explore anime streaming websites.</p>
+            <span class="site-category">Anime</span>
+          </div>
+        </a>
+
+        <a class="site-card" data-category="anime" href="https://1anime.app/" target="_blank" rel="noopener noreferrer">
+          <div class="site-icon">🍥</div>
+          <div class="site-info">
+            <h3>1ANIME</h3>
+            <p>Explore anime streaming websites.</p>
+            <span class="site-category">Anime</span>
+          </div>
+        </a>
+
+        <a class="site-card" data-category="anime" href="https://anistream.one/" target="_blank" rel="noopener noreferrer">
+          <div class="site-icon">🍥</div>
+          <div class="site-info">
+            <h3>ANISTREAM</h3>
+            <p>Explore anime streaming websites.</p>
+            <span class="site-category">Anime</span>
+          </div>
+        </a>
+
+        <a class="site-card" data-category="anime" href="https://kaa.lt/" target="_blank" rel="noopener noreferrer">
+          <div class="site-icon">🍥</div>
+          <div class="site-info">
+            <h3>KAA</h3>
+            <p>Explore anime streaming websites.</p>
+            <span class="site-category">Anime</span>
+          </div>
+        </a>
+
+        <a class="site-card" data-category="anime" href="https://justanime.to/" target="_blank" rel="noopener noreferrer">
+          <div class="site-icon">🍥</div>
+          <div class="site-info">
+            <h3>JUST ANIME</h3>
+            <p>Explore anime streaming websites.</p>
+            <span class="site-category">Anime</span>
+          </div>
+        </a>
+
+        <a class="site-card" data-category="anime" href="https://animesalt.link/" target="_blank" rel="noopener noreferrer">
+          <div class="site-icon">🍥</div>
+          <div class="site-info">
+            <h3>ANIME SALT</h3>
+            <p>Explore anime streaming websites.</p>
+            <span class="site-category">Anime</span>
+          </div>
+        </a>
+<article class="site-card" data-category="manga">
+          <div class="site-icon">📚</div>
+          <div class="site-info">
+            <h3>Manga</h3>
+            <p>Find manga and comic reading platforms.</p>
+            <span class="site-category">Manga</span>
+          </div>
+        </article>
+
+        <article class="site-card" data-category="sports">
+          <div class="site-icon">📺</div>
+          <div class="site-info">
+            <h3>Live TV & Sports</h3>
+            <p>Discover TV and sports platforms.</p>
+            <span class="site-category">Live TV & Sports</span>
+          </div>
+        </article>
+
+        <article class="site-card" data-category="kdrama">
+          <div class="site-icon">🇰🇷</div>
+          <div class="site-info">
+            <h3>K-Drama</h3>
+            <p>Explore Korean drama platforms.</p>
+            <span class="site-category">K-Drama</span>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="empty-message" id="emptyMessage" hidden>
+        No matching categories found.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#home" class="logo">Nowmi<span>Flix</span></a>
+    <p>A directory to discover entertainment websites.</p>
+<div class="creator-badge">✦ Partha</div>
+    <p class="copyright">© 2026 NowmiFlix</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
