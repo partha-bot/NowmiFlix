@@ -11,25 +11,45 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <header class="navbar">
-    <a href="#" class="logo">Nowmi<span>Flix</span></a>
+
+    <div class="logo-wrap">
+      <div class="logo">
+        Nowmi<span>Flix</span>
+      </div>
+
+      <div class="logo-author">
+        by Partha
+      </div>
+    </div>
 
     <nav>
       <a href="#home">Home</a>
       <a href="#categories">Categories</a>
       <a href="#sites">Explore</a>
     </nav>
+
   </header>
+
 
   <main id="home">
 
+    <!-- Hero -->
     <section class="hero">
-      <div class="hero-content">
-        <span class="eyebrow">YOUR ENTERTAINMENT DIRECTORY</span>
 
-        <h1>Discover Your <span>Next Favorite</span></h1>
+      <div class="hero-content">
+
+        <span class="eyebrow">
+          YOUR ENTERTAINMENT DIRECTORY
+        </span>
+
+        <h1>
+          Everything You Love,
+          <span>One Place</span>
+        </h1>
 
         <p>
           Explore movies, anime, manga, K-drama and more,
@@ -39,12 +59,20 @@
         <a href="#categories" class="hero-btn">
           Explore Categories
         </a>
+
       </div>
+
     </section>
 
+
+    <!-- Search -->
     <section class="search-section">
+
       <div class="search-box">
-        <span class="search-icon">⌕</span>
+
+        <span class="search-icon">
+          ⌕
+        </span>
 
         <input
           type="search"
@@ -53,45 +81,86 @@
           aria-label="Search websites"
         >
 
-        <button id="clearSearch" aria-label="Clear search">×</button>
+        <button
+          id="clearSearch"
+          aria-label="Clear search"
+        >
+          ×
+        </button>
+
       </div>
+
     </section>
 
-    <section class="section" id="categories">
+
+    <!-- Categories -->
+    <section
+      class="section"
+      id="categories"
+    >
 
       <div class="section-heading">
+
         <div>
-          <span class="eyebrow">BROWSE</span>
 
-          <h2>Explore Categories</h2>
+          <span class="eyebrow">
+            BROWSE
+          </span>
 
-          <p>Find websites based on your interests.</p>
+          <h2>
+            Explore Categories
+          </h2>
+
+          <p>
+            Find websites based on your interests.
+          </p>
+
         </div>
+
       </div>
+
 
       <div class="category-list">
 
-        <button class="category active" data-category="all">
+        <button
+          class="category active"
+          data-category="all"
+        >
           All
         </button>
 
-        <button class="category" data-category="movies">
+        <button
+          class="category"
+          data-category="movies"
+        >
           🎬 Movies & Shows
         </button>
 
-        <button class="category" data-category="anime">
+        <button
+          class="category"
+          data-category="anime"
+        >
           🍥 Anime
         </button>
 
-        <button class="category" data-category="manga">
+        <button
+          class="category"
+          data-category="manga"
+        >
           📚 Manga
         </button>
 
-        <button class="category" data-category="sports">
+        <button
+          class="category"
+          data-category="sports"
+        >
           📺 Live TV & Sports
         </button>
 
-        <button class="category" data-category="kdrama">
+        <button
+          class="category"
+          data-category="kdrama"
+        >
           🇰🇷 K-Drama
         </button>
 
@@ -99,27 +168,54 @@
 
     </section>
 
-    <section class="section sites-section" id="sites">
+
+    <!-- Websites -->
+    <section
+      class="section sites-section"
+      id="sites"
+    >
 
       <div class="section-heading">
-        <div>
-          <span class="eyebrow">DISCOVER</span>
 
-          <h2>Explore Websites</h2>
+        <div>
+
+          <span class="eyebrow">
+            DISCOVER
+          </span>
+
+          <h2>
+            Explore Websites
+          </h2>
 
           <p id="resultText">
             Browse our website directory.
           </p>
+
         </div>
+
       </div>
 
-      <div class="site-grid" id="siteGrid">
 
-        <article class="site-card" data-category="movies">
-          <div class="site-icon">🎬</div>
+      <div
+        class="site-grid"
+        id="siteGrid"
+      >
+
+        <!-- Movies -->
+        <article
+          class="site-card"
+          data-category="movies"
+        >
+
+          <div class="site-icon">
+            🎬
+          </div>
 
           <div class="site-info">
-            <h3>Movies & Shows</h3>
+
+            <h3>
+              Movies & Shows
+            </h3>
 
             <p>
               Discover movie and TV show platforms.
@@ -128,14 +224,27 @@
             <span class="site-category">
               Movies & Shows
             </span>
+
           </div>
+
         </article>
 
-        <article class="site-card" data-category="anime">
-          <div class="site-icon">🍥</div>
+
+        <!-- Anime -->
+        <article
+          class="site-card"
+          data-category="anime"
+        >
+
+          <div class="site-icon">
+            🍥
+          </div>
 
           <div class="site-info">
-            <h3>Anime</h3>
+
+            <h3>
+              Anime
+            </h3>
 
             <p>
               Explore anime websites and services.
@@ -144,14 +253,27 @@
             <span class="site-category">
               Anime
             </span>
+
           </div>
+
         </article>
 
-        <article class="site-card" data-category="manga">
-          <div class="site-icon">📚</div>
+
+        <!-- Manga -->
+        <article
+          class="site-card"
+          data-category="manga"
+        >
+
+          <div class="site-icon">
+            📚
+          </div>
 
           <div class="site-info">
-            <h3>Manga</h3>
+
+            <h3>
+              Manga
+            </h3>
 
             <p>
               Find manga and comic reading platforms.
@@ -160,14 +282,27 @@
             <span class="site-category">
               Manga
             </span>
+
           </div>
+
         </article>
 
-        <article class="site-card" data-category="sports">
-          <div class="site-icon">📺</div>
+
+        <!-- Live TV & Sports -->
+        <article
+          class="site-card"
+          data-category="sports"
+        >
+
+          <div class="site-icon">
+            📺
+          </div>
 
           <div class="site-info">
-            <h3>Live TV & Sports</h3>
+
+            <h3>
+              Live TV & Sports
+            </h3>
 
             <p>
               Discover TV and sports platforms.
@@ -176,14 +311,27 @@
             <span class="site-category">
               Live TV & Sports
             </span>
+
           </div>
+
         </article>
 
-        <article class="site-card" data-category="kdrama">
-          <div class="site-icon">🇰🇷</div>
+
+        <!-- K-Drama -->
+        <article
+          class="site-card"
+          data-category="kdrama"
+        >
+
+          <div class="site-icon">
+            🇰🇷
+          </div>
 
           <div class="site-info">
-            <h3>K-Drama</h3>
+
+            <h3>
+              K-Drama
+            </h3>
 
             <p>
               Explore Korean drama platforms.
@@ -192,12 +340,19 @@
             <span class="site-category">
               K-Drama
             </span>
+
           </div>
+
         </article>
 
       </div>
 
-      <p class="empty-message" id="emptyMessage" hidden>
+
+      <p
+        class="empty-message"
+        id="emptyMessage"
+        hidden
+      >
         No matching categories found.
       </p>
 
@@ -205,9 +360,14 @@
 
   </main>
 
+
+  <!-- Footer -->
   <footer>
 
-    <a href="#home" class="logo">
+    <a
+      href="#home"
+      class="logo"
+    >
       Nowmi<span>Flix</span>
     </a>
 
@@ -215,11 +375,16 @@
       A directory to discover entertainment websites.
     </p>
 
+    <div class="creator-badge">
+      ✦ Partha
+    </div>
+
     <p class="copyright">
       © 2026 NowmiFlix
     </p>
 
   </footer>
+
 
   <script src="script.js"></script>
 
