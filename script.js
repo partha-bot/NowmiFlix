@@ -17,8 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const text = card.textContent.toLowerCase();
 
       const matchesCategory =
-        selectedCategory === "all" ||
-        category === selectedCategory;
+        selectedCategory === "all" || category === selectedCategory;
 
       const matchesSearch = text.includes(query);
       const visible = matchesCategory && matchesSearch;
@@ -32,22 +31,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     resultText.textContent = query
       ? `${visibleCount} result(s) found`
-      : `${visibleCount} categories available`;
+      : `${visibleCount} websites available`;
 
     emptyMessage.hidden = visibleCount !== 0;
   }
 
   categoryButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      categoryButtons.forEach((item) => {
-        item.classList.remove("active");
-      });
-
+      categoryButtons.forEach((item) => item.classList.remove("active"));
       button.classList.add("active");
       selectedCategory = button.dataset.category;
-
       filterSites();
     });
   });
 
-  s
+  searchInput.addEventListener("in
