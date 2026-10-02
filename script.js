@@ -1,122 +1,63 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("searchInput");
   const clearSearch = document.getElementById("clearSearch");
-  const categoryButtons = document.querySelectorAll(".category");
-  const groups = [...document.querySelectorAll(".site-group")];
+
+  const categoryButtons = [
+    ...document.querySelectorAll(".category")
+  ];
+
+  const groups = [
+    ...document.querySelectorAll(".site-group")
+  ];
+
   const resultText = document.getElementById("resultText");
   const emptyMessage = document.getElementById("emptyMessage");
 
   let selectedCategory = "all";
 
-  // Automatically count website cards in each category.
-  groups.forEach((group) => {
-    const count = group.querySelectorAll(".website-card").length;
-    const countElement = group.querySelector("[data-count]");
+  /* =========================
+     CATEGORY OPEN / CLOSE
+  ========================= */
 
-    if (countElement) {
-      countElement.textContent = count;
-    }
-
-    group.dataset.total = String(count);
-
+  function setGroupOpen(group, open) {
     const header = group.querySelector(".group-header");
     const panel = group.querySelector(".website-grid");
 
-    if (header && panel) {
-      header.addEventListener("click", () => {
-        const isOpen =
-          header.getAttribute("aria-expanded") === "true";
+    if (!header || !panel) return;
 
-        header.setAttribute("aria-expanded", String(!isOpen));
-        panel.hidden = isOpen;
-        group.classList.toggle("expanded", !isOpen);
-      });
-    }
-  });
+    header.setAttribute("aria-expanded", String(open));
+    panel.hidden = !open;
 
-  function filterSites() {
-    const query = searchInput.value.trim().toLowerCase();
-    let visibleLinks = 0;
-    let visibleGroups = 0;
-
-    groups.forEach((group) => {
-      const categoryMatches =
-        selectedCategory === "all" ||
-        group.dataset.category === selectedCategory;
-
-      const header = group.querySelector(".group-header");
-      const panel = group.querySelector(".website-grid");
-      const cards = [...group.querySelectorAll(".website-card")];
-
-      let groupMatches = 0;
-
-      cards.forEach((card) => {
-        const searchable =
-          `${card.textContent} ${card.href}`.toLowerCase();
-
-        const matches =
-          categoryMatches && searchable.includes(query);
-
-        card.hidden = !matches;
-
-        if (matches) {
-          visibleLinks++;
-          groupMatches++;
-        }
-      });
-
-      const showGroup =
-        categoryMatches && (query ? groupMatches > 0 : true);
-
-      group.hidden = !showGroup;
-
-      if (showGroup) visibleGroups++;
-
-      if (header && panel) {
-        if (query && showGroup) {
-          header.setAttribute("aria-expanded", "true");
-          panel.hidden = false;
-          group.classList.add("expanded");
-        } else if (query && !showGroup) {
-          header.setAttribute("aria-expanded", "false");
-          panel.hidden = true;
-          group.classList.remove("expanded");
-        }
-      }
-    });
-
-    resultText.textContent = query
-      ? `${visibleLinks} website(s) found`
-      : `${visibleLinks} websites available across ${visibleGroups} categories`;
-
-    emptyMessage.hidden = visibleLinks !== 0 || !query;
+    group.classList.toggle("expanded", open);
   }
 
-  categoryButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      categoryButtons.forEach((item) =>
-        item.classList.remove("active")
-      );
+  /* =========================
+     COUNT + CATEGORY CLICK
+  ========================= */
 
-      button.classList.add("active");
-      selectedCategory = button.dataset.category;
-      filterSites();
+  groups.forEach((group) => {
+    const cards = [
+      ...group.querySelectorAll(".website-card")
+    ];
 
-      document.getElementById("sites").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    });
-  });
+    const countElement =
+      group.querySelector("[data-count]");
 
-  searchInput.addEventListener("input", filterSites);
+    /* Real website count */
+    if (countElement) {
+      countElement.textContent = cards.length;
+    }
 
-  clearSearch.addEventListener("click", () => {
-    searchInput.value = "";
-    filterSites();
-    searchInput.focus();
-  });
+    group.dataset.total = String(cards.length);
 
-  filterSites();
-});
+    const header =
+      group.querySelector(".group-header");
+
+    if (!header) return;
+
+    /*
+      পুরো category card click করলে
+      open / close হবে।
+    */
+
+    head
