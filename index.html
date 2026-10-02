@@ -3,272 +3,407 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NowmiFlix</title>
+  <meta name="theme-color" content="#10131e">
+
+  <title>NowmiFlix | Discover More</title>
+  <meta name="description"
+        content="Discover movies, anime, manga, K-drama and more with NowmiFlix.">
+
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
   <header class="navbar">
-    <div class="nav-container">
-      <div class="brand">
-        <span class="brand-title">Nowmi<span class="brand-accent">Flix</span></span>
-        <span class="brand-sub">by Parthx</span>
+
+    <div class="logo-wrap">
+      <div class="logo">
+        Nowmi<span>Flix</span>
       </div>
-      <nav class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#categories">Categories</a>
-        <a href="#top-site">Top site</a>
-      </nav>
+
+      <div class="logo-author">
+        by Partha
+      </div>
     </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#sites">Explore</a>
+    </nav>
+
   </header>
 
-  <main class="main-content">
-    <!-- HERO SECTION -->
-    <section class="hero-section" id="home">
-      <span class="badge-label">YOUR ENTERTAINMENT DIRECTORY</span>
-      <h1 class="hero-title">Everything You Love,<br><span class="hero-accent">One Place</span></h1>
-      <p class="hero-desc">Explore movies, anime, manga, K-drama and more, all in one place.</p>
-      <a href="#categories" class="btn-primary">Explore Categories</a>
+
+  <main id="home">
+
+    <!-- Hero -->
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <span class="eyebrow">
+          YOUR ENTERTAINMENT DIRECTORY
+        </span>
+
+        <h1>
+          Everything You Love,
+          <span>One Place</span>
+        </h1>
+
+        <p>
+          Explore movies, anime, manga, K-drama and more,
+          all in one place.
+        </p>
+
+        <a href="#categories" class="hero-btn">
+          Explore Categories
+        </a>
+
+      </div>
+
     </section>
 
-    <!-- SEARCH BAR -->
-    <div class="search-wrapper">
+
+    <!-- Search -->
+    <section class="search-section">
+
       <div class="search-box">
-        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <input type="search" id="site-search" class="search-input" placeholder="Search websites..." autocomplete="off">
-        <button type="button" id="clear-search-btn" class="clear-search-btn" aria-label="Clear Search">&times;</button>
-      </div>
-    </div>
 
-    <!-- CATEGORY PILL SELECTOR -->
-    <section class="filter-section" id="categories">
-      <span class="sub-label">BROWSE</span>
-      <h2 class="section-title">Explore Categories</h2>
-      <p class="section-desc">Find websites based on your interests.</p>
+        <span class="search-icon">
+          ⌕
+        </span>
 
-      <div class="category-pills">
-        <button class="pill active" data-category="all">All</button>
-        <button class="pill" data-category="movies">🎬 Movies & Shows</button>
-        <button class="pill" data-category="anime">⛩️ Anime</button>
-        <button class="pill" data-category="manga">📚 Manga</button>
-        <button class="pill" data-category="sports">📺 Live TV & Sports</button>
-        <button class="pill" data-category="kdrama">🇰🇷 K-Drama</button>
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search websites..."
+          aria-label="Search websites"
+        >
+
+        <button
+          id="clearSearch"
+          aria-label="Clear search"
+        >
+          ×
+        </button>
+
       </div>
+
     </section>
 
-    <!-- CATEGORY DIRECTORY -->
-    <section class="directory-section">
-      <span class="sub-label">DISCOVER</span>
-      <h2 class="section-title">Explore Websites</h2>
-      <p class="section-desc">Browse our website directory.</p>
 
-      <div class="categories-list">
-        
-        <!-- 1. MOVIES & SHOWS -->
-        <div class="category-card" data-category="movies">
-          <div class="category-card-header">
-            <div class="cat-left">
-              <div class="cat-icon-box">🎬</div>
-              <div class="cat-info">
-                <h3 class="cat-title">Movies & Shows</h3>
-                <p class="cat-sub">Stream popular and classic movies.</p>
-              </div>
-            </div>
-            <div class="cat-right">
-              <span class="cat-count">0</span>
-              <button class="cat-toggle-btn" aria-label="Toggle">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="category-content">
-            <p class="empty-msg">Websites will be added here soon.</p>
-          </div>
-        </div>
+    <!-- Categories -->
+    <section
+      class="section"
+      id="categories"
+    >
 
-        <!-- 2. ANIME (EXPANDED BY DEFAULT) -->
-        <div class="category-card expanded" data-category="anime">
-          <div class="category-card-header">
-            <div class="cat-left">
-              <div class="cat-icon-box">⛩️</div>
-              <div class="cat-info">
-                <h3 class="cat-title">Anime</h3>
-                <p class="cat-sub">Explore anime series and movies.</p>
-              </div>
-            </div>
-            <div class="cat-right">
-              <span class="cat-count">0</span>
-              <button class="cat-toggle-btn" aria-label="Toggle">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="category-content">
-            <div class="websites-grid">
-              
-              <div class="website-card">
-                <div class="logo-box">
-                  <span class="logo-text blue">ENMA</span>
-                </div>
-                <h4 class="website-name">ENMA</h4>
-                <a href="https://enma.to" target="_blank" rel="noopener noreferrer" class="btn-visit">Open Website &rarr;</a>
-              </div>
+      <div class="section-heading">
 
-              <div class="website-card">
-                <div class="logo-box">
-                  <span class="logo-shape">&Delta;</span>
-                </div>
-                <h4 class="website-name">YENIME</h4>
-                <a href="https://yenime.com" target="_blank" rel="noopener noreferrer" class="btn-visit">Open Website &rarr;</a>
-              </div>
+        <div>
 
-              <div class="website-card">
-                <div class="logo-box">
-                  <span class="logo-text tech">][</span>
-                </div>
-                <h4 class="website-name">JUST ANIME</h4>
-                <a href="https://justanime.to" target="_blank" rel="noopener noreferrer" class="btn-visit">Open Website &rarr;</a>
-              </div>
+          <span class="eyebrow">
+            BROWSE
+          </span>
 
-              <div class="website-card">
-                <div class="logo-box">
-                  <span class="logo-text pink">RS</span>
-                </div>
-                <h4 class="website-name">ANIME SALT</h4>
-                <a href="https://animesalt.com" target="_blank" rel="noopener noreferrer" class="btn-visit">Open Website &rarr;</a>
-              </div>
+          <h2>
+            Explore Categories
+          </h2>
 
-              <div class="website-card">
-                <div class="logo-box">
-                  <span class="logo-circle">&bull;</span>
-                </div>
-                <h4 class="website-name">animenix</h4>
-                <a href="https://animenix.com" target="_blank" rel="noopener noreferrer" class="btn-visit">Open Website &rarr;</a>
-              </div>
+          <p>
+            Find websites based on your interests.
+          </p>
 
-              <div class="website-card">
-                <div class="logo-box">
-                  <span class="logo-icon-orange">&#9881;</span>
-                </div>
-                <h4 class="website-name">OTAKIX</h4>
-                <a href="https://otakix.com" target="_blank" rel="noopener noreferrer" class="btn-visit">Open Website &rarr;</a>
-              </div>
-
-              <div class="website-card">
-                <div class="logo-box round purple">
-                  <span class="logo-text white">h!</span>
-                </div>
-                <h4 class="website-name">HiAnime</h4>
-                <a href="https://hianime.to" target="_blank" rel="noopener noreferrer" class="btn-visit">Open Website &rarr;</a>
-              </div>
-
-              <div class="website-card">
-                <div class="logo-box round light">
-                  <span class="logo-text dark">&Aring;</span>
-                </div>
-                <h4 class="website-name">Animeshu</h4>
-                <a href="https://animeshu.to" target="_blank" rel="noopener noreferrer" class="btn-visit">Open Website &rarr;</a>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. MANGA -->
-        <div class="category-card" data-category="manga">
-          <div class="category-card-header">
-            <div class="cat-left">
-              <div class="cat-icon-box">📚</div>
-              <div class="cat-info">
-                <h3 class="cat-title">Manga</h3>
-                <p class="cat-sub">Read popular and classic manga.</p>
-              </div>
-            </div>
-            <div class="cat-right">
-              <span class="cat-count">0</span>
-              <button class="cat-toggle-btn" aria-label="Toggle">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="category-content">
-            <p class="empty-msg">Websites will be added here soon.</p>
-          </div>
-        </div>
-
-        <!-- 4. LIVE TV & SPORTS -->
-        <div class="category-card" data-category="sports">
-          <div class="category-card-header">
-            <div class="cat-left">
-              <div class="cat-icon-box">📺</div>
-              <div class="cat-info">
-                <h3 class="cat-title">Live TV & Sports</h3>
-                <p class="cat-sub">Stream live TV & sports channels.</p>
-              </div>
-            </div>
-            <div class="cat-right">
-              <span class="cat-count">0</span>
-              <button class="cat-toggle-btn" aria-label="Toggle">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="category-content">
-            <p class="empty-msg">Websites will be added here soon.</p>
-          </div>
-        </div>
-
-        <!-- 5. K-DRAMA -->
-        <div class="category-card" data-category="kdrama">
-          <div class="category-card-header">
-            <div class="cat-left">
-              <div class="cat-icon-box">🇰🇷</div>
-              <div class="cat-info">
-                <h3 class="cat-title">K-Drama</h3>
-                <p class="cat-sub">Watch latest Korean series.</p>
-              </div>
-            </div>
-            <div class="cat-right">
-              <span class="cat-count">0</span>
-              <button class="cat-toggle-btn" aria-label="Toggle">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="category-content">
-            <p class="empty-msg">Websites will be added here soon.</p>
-          </div>
         </div>
 
       </div>
+
+
+      <div class="category-list">
+
+        <button
+          class="category active"
+          data-category="all"
+        >
+          All
+        </button>
+
+        <button
+          class="category"
+          data-category="movies"
+        >
+          🎬 Movies & Shows
+        </button>
+
+        <button
+          class="category"
+          data-category="anime"
+        >
+          🍥 Anime
+        </button>
+
+        <button
+          class="category"
+          data-category="manga"
+        >
+          📚 Manga
+        </button>
+
+        <button
+          class="category"
+          data-category="sports"
+        >
+          📺 Live TV & Sports
+        </button>
+
+        <button
+          class="category"
+          data-category="kdrama"
+        >
+          🇰🇷 K-Drama
+        </button>
+
+      </div>
+
     </section>
+
+
+    <!-- Websites -->
+    <section
+      class="section sites-section"
+      id="sites"
+    >
+
+      <div class="section-heading">
+
+        <div>
+
+          <span class="eyebrow">
+            DISCOVER
+          </span>
+
+          <h2>
+            Explore Websites
+          </h2>
+
+          <p id="resultText">
+            Browse our website directory.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="site-groups" id="siteGroups">
+        <section class="site-group" data-category="movies">
+          <button class="group-header" type="button" aria-expanded="false">
+            <span class="group-heading-icon" aria-hidden="true">🎬</span>
+            <span class="group-heading-text"><strong>Movies & Shows</strong><small>Discover movie and TV show platforms.</small></span>
+            <span class="group-count" data-count>0</span>
+            <span class="group-arrow" aria-hidden="true">⌄</span>
+          </button>
+          <div class="website-grid" hidden>
+          <p class="category-empty">Websites will be added here soon.</p>
+          </div>
+        </section>
+        <section class="site-group" data-category="anime">
+          <button class="group-header" type="button" aria-expanded="false">
+            <span class="group-heading-icon" aria-hidden="true">🍥</span>
+            <span class="group-heading-text"><strong>Anime</strong><small>Explore anime websites and services.</small></span>
+            <span class="group-count" data-count>0</span>
+            <span class="group-arrow" aria-hidden="true">⌄</span>
+          </button>
+          <div class="website-grid" hidden>
+          <a class="website-card" href="https://enma.lol" target="_blank" rel="noopener noreferrer nofollow" data-name="ENMA">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=enma.lol&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>ENMA</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://yenime.net" target="_blank" rel="noopener noreferrer nofollow" data-name="YENIME">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=yenime.net&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>YENIME</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://flixani.studio" target="_blank" rel="noopener noreferrer nofollow" data-name="FLIXANI">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=flixani.studio&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>FLIXANI</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://anishows.org" target="_blank" rel="noopener noreferrer nofollow" data-name="ANY SHOWS">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=anishows.org&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>ANY SHOWS</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://animetvplus.xyz" target="_blank" rel="noopener noreferrer nofollow" data-name="ANIME TV">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=animetvplus.xyz&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>ANIME TV</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://kaa.lt" target="_blank" rel="noopener noreferrer nofollow" data-name="KAA">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=kaa.lt&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>KAA</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://justanime.to" target="_blank" rel="noopener noreferrer nofollow" data-name="JUST ANIME">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=justanime.to&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>JUST ANIME</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://animesalt.link" target="_blank" rel="noopener noreferrer nofollow" data-name="ANIME SALT">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=animesalt.link&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>ANIME SALT</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://senpaiflix.fun" target="_blank" rel="noopener noreferrer nofollow" data-name="SENPAI FLIX">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=senpaiflix.fun&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>SENPAI FLIX</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://animextrons.co.in" target="_blank" rel="noopener noreferrer nofollow" data-name="ANIMEXTRONS">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=animextrons.co.in&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>ANIMEXTRONS</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://anikototv.to" target="_blank" rel="noopener noreferrer nofollow" data-name="ANIKOTO TV">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=anikototv.to&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>ANIKOTO TV</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://watchanimez.me" target="_blank" rel="noopener noreferrer nofollow" data-name="WATCH ANIMEx">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=watchanimez.me&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>WATCH ANIMEx</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://animerulz.co.in" target="_blank" rel="noopener noreferrer nofollow" data-name="animerulz">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=animerulz.co.in&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>animerulz</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://otanox.online" target="_blank" rel="noopener noreferrer nofollow" data-name="OTANOX">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=otanox.online&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>OTANOX</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://hianime.at" target="_blank" rel="noopener noreferrer nofollow" data-name="HiAnime">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=hianime.at&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>HiAnime</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://animetsu.site" target="_blank" rel="noopener noreferrer nofollow" data-name="Animetsu">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=animetsu.site&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>Animetsu</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          </div>
+        </section>
+        <section class="site-group" data-category="manga">
+          <button class="group-header" type="button" aria-expanded="false">
+            <span class="group-heading-icon" aria-hidden="true">📚</span>
+            <span class="group-heading-text"><strong>Manga</strong><small>Find manga and comic reading platforms.</small></span>
+            <span class="group-count" data-count>0</span>
+            <span class="group-arrow" aria-hidden="true">⌄</span>
+          </button>
+          <div class="website-grid" hidden>
+          <p class="category-empty">Websites will be added here soon.</p>
+          </div>
+        </section>
+        <section class="site-group" data-category="sports">
+          <button class="group-header" type="button" aria-expanded="false">
+            <span class="group-heading-icon" aria-hidden="true">📺</span>
+            <span class="group-heading-text"><strong>Live TV & Sports</strong><small>Discover TV and sports platforms.</small></span>
+            <span class="group-count" data-count>0</span>
+            <span class="group-arrow" aria-hidden="true">⌄</span>
+          </button>
+          <div class="website-grid" hidden>
+          <p class="category-empty">Websites will be added here soon.</p>
+          </div>
+        </section>
+        <section class="site-group" data-category="kdrama">
+          <button class="group-header" type="button" aria-expanded="false">
+            <span class="group-heading-icon" aria-hidden="true">🇰🇷</span>
+            <span class="group-heading-text"><strong>K-Drama</strong><small>Explore Korean drama platforms.</small></span>
+            <span class="group-count" data-count>0</span>
+            <span class="group-arrow" aria-hidden="true">⌄</span>
+          </button>
+          <div class="website-grid" hidden>
+          <p class="category-empty">Websites will be added here soon.</p>
+          </div>
+        </section>
+      </div>
+
+      <p
+        class="empty-message"
+        id="emptyMessage"
+        hidden
+      >
+        No matching websites found.
+      </p>
+
+    </section>
+
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-brand">Nowmi<span class="brand-accent">Flix</span></div>
-    <p class="footer-text">A stream is freely open on emphasized websites.</p>
-    <a href="#" class="creator-badge">&#9733; Parthx</a>
-    <p class="copyright">&copy; 2026 NowmiFlix</p>
+
+  <!-- Footer -->
+  <footer>
+
+    <a
+      href="#home"
+      class="logo"
+    >
+      Nowmi<span>Flix</span>
+    </a>
+
+    <p>
+      A directory to discover entertainment websites.
+    </p>
+
+    <div class="creator-badge">
+      ✦ Partha
+    </div>
+
+    <p class="copyright">
+      © 2026 NowmiFlix
+    </p>
+
   </footer>
 
-  <script src="script.js"></script>
+
+  <script src="script.js" defer></script>
+
 </body>
 </html>
