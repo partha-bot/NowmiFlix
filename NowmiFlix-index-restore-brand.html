@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10131e">
+
+  <title>NowmiFlix | Discover More</title>
+  <meta name="description"
+        content="Discover movies, anime, manga, K-drama and more with NowmiFlix.">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+
+    <div class="logo-wrap">
+      <a href="#home" class="logo" aria-label="NowmiFlix Home">Nowmi<span>Flix</span></a>
+
+      <div class="logo-author">
+        by Partha
+      </div>
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#sites">Explore</a>
+    </nav>
+
+  </header>
+
+
+  <main id="home">
+
+    <!-- Hero -->
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <span class="eyebrow">
+          YOUR ENTERTAINMENT DIRECTORY
+        </span>
+
+        <h1>
+          Everything You Love,
+          <span>One Place</span>
+        </h1>
+
+        <p>
+          Explore movies, anime, manga, K-drama and more,
+          all in one place.
+        </p>
+
+        <a href="#categories" class="hero-btn">
+          Explore Categories
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- Search -->
+    <section class="search-section">
+
+      <div class="search-box">
+
+        <span class="search-icon">
+          ⌕
+        </span>
+
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search websites..."
+          aria-label="Search websites"
+        >
+
+        <button
+          id="clearSearch"
+          aria-label="Clear search"
+        >
+          ×
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- Categories -->
+    <section
+      class="section"
+      id="categories"
+    >
+
+      <div class="section-heading">
+
+        <div>
+
+          <span class="eyebrow">
+            BROWSE
+          </span>
+
+          <h2>
+            Explore Categories
+          </h2>
+
+          <p>
+            Find websites based on your interests.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="category-list">
+
+        <button
+          class="category active"
+          data-category="all"
+        >
+          All
+        </button>
+
+        <button
+          class="category"
+          data-category="movies"
+        >
+          🎬 Movies & Shows
+        </button>
+
+        <button
+          class="category"
+          data-category="anime"
+        >
+          🍥 Anime
+        </button>
+
+        <button
+          class="category"
+          data-category="manga"
+        >
+          📚 Manga
+        </button>
+
+        <button
+          class="category"
+          data-category="sports"
+        >
+          📺 Live TV & Sports
+        </button>
+
+        <button
+          class="category"
+          data-category="kdrama"
+        >
+          🇰🇷 K-Drama
+        </button>
+
+        <button
+          class="category"
+          data-category="games"
+        >
+          🎮 Games
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- Websites -->
+    <section
+      class="section sites-section"
+      id="sites"
+    >
+
+      <div class="section-heading">
+
+        <div>
+
+          <span class="eyebrow">
+            DISCOVER
+          </span>
+
+          <h2>
+            Explore Websites
+          </h2>
+
+          <p id="resultText">
+            Browse our website directory.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="site-groups" id="siteGroups">
+        <section class="site-group" data-category="movies">
+          <button class="group-header" type="button" aria-expanded="false">
+            <span class="group-heading-icon" aria-hidden="true">🎬</span>
+            <span class="group-heading-text"><strong>Movies & Shows</strong><small>Discover movie and TV show platforms.</small></span>
+            <span class="group-count" data-count>0</span>
+            <span class="group-arrow" aria-hidden="true">⌄</span>
+          </button>
+          <div class="website-grid" hidden>
+          <a class="website-card" href="https://cinezo.net" target="_blank" rel="noopener noreferrer nofollow" data-name="CINEZO">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=cinezo.net&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>CINEZO</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://7movies.in" target="_blank" rel="noopener noreferrer nofollow" data-name="7movies">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=7movies.in&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>7movies</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://flixhub.studio" target="_blank" rel="noopener noreferrer nofollow" data-name="FLIXHUB">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=flixhub.studio&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>FLIXHUB</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://thugtv.online" target="_blank" rel="noopener noreferrer nofollow" data-name="THUGTV">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=thugtv.online&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>THUGTV</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://1tube.org" target="_blank" rel="noopener noreferrer nofollow" data-name="1TUBE">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=1tube.org&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>1TUBE</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://redflix.club" target="_blank" rel="noopener noreferrer nofollow" data-name="RED FLIX">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=redflix.club&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>RED FLIX</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://1shows.org" target="_blank" rel="noopener noreferrer nofollow" data-name="1 Show">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=1shows.org&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>1 Show</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://1flex.org" target="_blank" rel="noopener noreferrer nofollow" data-name="1FLEX">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=1flex.org&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>1FLEX</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://nippleflix.org" target="_blank" rel="noopener noreferrer nofollow" data-name="NIPPLEFLIX">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=nippleflix.org&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>NIPPLEFLIX</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://pvrplay.com" target="_blank" rel="noopener noreferrer nofollow" data-name="PvrPlay">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=pvrplay.com&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>PvrPlay</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://pantyflix.org" target="_blank" rel="noopener noreferrer nofollow" data-name="PANTYFLIX">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=pantyflix.org&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>PANTYFLIX</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://shuttletv.su" target="_blank" rel="noopener noreferrer nofollow" data-name="SHUTTLE TV">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=shuttletv.su&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>SHUTTLE TV</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://flyflix.net" target="_blank" rel="noopener noreferrer nofollow" data-name="FLY FLIX">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=flyflix.net&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>FLY FLIX</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://youshows.org" target="_blank" rel="noopener noreferrer nofollow" data-name="YOU SHOWS">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=youshows.org&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>YOU SHOWS</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://primeshows.org" target="_blank" rel="noopener noreferrer nofollow" data-name="PRIME MOVIES">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=primeshows.org&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>PRIME MOVIES</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://dulo.cx" target="_blank" rel="noopener noreferrer nofollow" data-name="DULO">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=dulo.cx&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>DULO</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://stigstream.ru" target="_blank" rel="noopener noreferrer nofollow" data-name="STIGSTREAM">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=stigstream.ru&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>STIGSTREAM</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://willow.arlen.icu" target="_blank" rel="noopener noreferrer nofollow" data-name="WILLOW">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=willow.arlen.icu&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>WILLOW</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://cinrift.me" target="_blank" rel="noopener noreferrer nofollow" data-name="CINRIFT">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=cinrift.me&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>CINRIFT</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://flixhub.studio" target="_blank" rel="noopener noreferrer nofollow" data-name="FLIXHUB">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=flixhub.studio&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>FLIXHUB</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://cinemove.cc" target="_blank" rel="noopener noreferrer nofollow" data-name="Cinemove">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=cinemove.cc&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>Cinemove</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://vuflix.co" target="_blank" rel="noopener noreferrer nofollow" data-name="Vuflix">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=vuflix.co&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>Vuflix</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://7reels.cc" target="_blank" rel="noopener noreferrer nofollow" data-name="7reels">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=7reels.cc&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>7reels</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://anicine.xyz" target="_blank" rel="noopener noreferrer nofollow" data-name="Anicine">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=anicine.xyz&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>Anicine</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://cinehd.vc" target="_blank" rel="noopener noreferrer nofollow" data-name="cinehd">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=cinehd.vc&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>cinehd</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://allflix.org" target="_blank" rel="noopener noreferrer nofollow" data-name="AllFlix">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=allflix.org&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>AllFlix</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://netshows.xyz" target="_blank" rel="noopener noreferrer nofollow" data-name="Netshows">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=netshows.xyz&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>Netshows</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://bingr.one" target="_blank" rel="noopener noreferrer nofollow" data-name="bingr one">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=bingr.one&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>bingr one</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://toflix.co" target="_blank" rel="noopener noreferrer nofollow" data-name="TOFLIX">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=toflix.co&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>TOFLIX</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://chillflix.lol" target="_blank" rel="noopener noreferrer nofollow" data-name="CHILLFLIX">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=chillflix.lol&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>CHILLFLIX</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://streamr.dpdns.org" target="_blank" rel="noopener noreferrer nofollow" data-name="Streamr">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=streamr.dpdns.org&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>Streamr</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://cinex.lol" target="_blank" rel="noopener noreferrer nofollow" data-name="cinex">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=cinex.lol&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>cinex</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          </div>
+        </section>
+        <section class="site-group" data-category="anime">
+          <button class="group-header" type="button" aria-expanded="false">
+            <span class="group-heading-icon" aria-hidden="true">🍥</span>
+            <span class="group-heading-text"><strong>Anime</strong><small>Explore anime websites and services.</small></span>
+            <span class="group-count" data-count>0</span>
+            <span class="group-arrow" aria-hidden="true">⌄</span>
+          </button>
+          <div class="website-grid" hidden>
+          <a class="website-card" href="https://enma.lol" target="_blank" rel="noopener noreferrer nofollow" data-name="ENMA">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=enma.lol&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>ENMA</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://yenime.net" target="_blank" rel="noopener noreferrer nofollow" data-name="YENIME">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=yenime.net&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>YENIME</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://flixani.studio" target="_blank" rel="noopener noreferrer nofollow" data-name="FLIXANI">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=flixani.studio&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>FLIXANI</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://anishows.org" target="_blank" rel="noopener noreferrer nofollow" data-name="ANY SHOWS">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=anishows.org&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>ANY SHOWS</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://animetvplus.xyz" target="_blank" rel="noopener noreferrer nofollow" data-name="ANIME TV">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=animetvplus.xyz&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>ANIME TV</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://kaa.lt" target="_blank" rel="noopener noreferrer nofollow" data-name="KAA">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=kaa.lt&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>KAA</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://justanime.to" target="_blank" rel="noopener noreferrer nofollow" data-name="JUST ANIME">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=justanime.to&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>JUST ANIME</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://animesalt.link" target="_blank" rel="noopener noreferrer nofollow" data-name="ANIME SALT">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=animesalt.link&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>ANIME SALT</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://senpaiflix.fun" target="_blank" rel="noopener noreferrer nofollow" data-name="SENPAI FLIX">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=senpaiflix.fun&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>SENPAI FLIX</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://animextrons.co.in" target="_blank" rel="noopener noreferrer nofollow" data-name="ANIMEXTRONS">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=animextrons.co.in&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>ANIMEXTRONS</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://anikototv.to" target="_blank" rel="noopener noreferrer nofollow" data-name="ANIKOTO TV">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=anikototv.to&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>ANIKOTO TV</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://watchanimez.me" target="_blank" rel="noopener noreferrer nofollow" data-name="WATCH ANIMEx">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=watchanimez.me&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>WATCH ANIMEx</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://animerulz.co.in" target="_blank" rel="noopener noreferrer nofollow" data-name="animerulz">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=animerulz.co.in&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>animerulz</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://otanox.online" target="_blank" rel="noopener noreferrer nofollow" data-name="OTANOX">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=otanox.online&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>OTANOX</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://hianime.at" target="_blank" rel="noopener noreferrer nofollow" data-name="HiAnime">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=hianime.at&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>HiAnime</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://animetsu.site" target="_blank" rel="noopener noreferrer nofollow" data-name="Animetsu">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=animetsu.site&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>Animetsu</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          </div>
+        </section>
+        <section class="site-group" data-category="manga">
+          <button class="group-header" type="button" aria-expanded="false">
+            <span class="group-heading-icon" aria-hidden="true">📚</span>
+            <span class="group-heading-text"><strong>Manga</strong><small>Find manga and comic reading platforms.</small></span>
+            <span class="group-count" data-count>0</span>
+            <span class="group-arrow" aria-hidden="true">⌄</span>
+          </button>
+          <div class="website-grid" hidden>
+          <a class="website-card" href="https://mangaball.net" target="_blank" rel="noopener noreferrer nofollow" data-name="MANGABALL">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=mangaball.net&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>MANGABALL</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://comick.dev" target="_blank" rel="noopener noreferrer nofollow" data-name="COMICK">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=comick.dev&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>COMICK</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://qtoon.org" target="_blank" rel="noopener noreferrer nofollow" data-name="Q TOON">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=qtoon.org&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>Q TOON</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://weebcentral.com" target="_blank" rel="noopener noreferrer nofollow" data-name="WEEB CENTRAL">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=weebcentral.com&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>WEEB CENTRAL</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://kingofshojo.com" target="_blank" rel="noopener noreferrer nofollow" data-name="KING OF SHOJO">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=kingofshojo.com&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>KING OF SHOJO</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://webtoons.com" target="_blank" rel="noopener noreferrer nofollow" data-name="WEBTOON">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=webtoons.com&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>WEBTOON</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://anireads.cc" target="_blank" rel="noopener noreferrer nofollow" data-name="Manga reader">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=anireads.cc&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>Manga reader</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          </div>
+        </section>
+        <section class="site-group" data-category="sports">
+          <button class="group-header" type="button" aria-expanded="false">
+            <span class="group-heading-icon" aria-hidden="true">📺</span>
+            <span class="group-heading-text"><strong>Live TV & Sports</strong><small>Discover TV and sports platforms.</small></span>
+            <span class="group-count" data-count>0</span>
+            <span class="group-arrow" aria-hidden="true">⌄</span>
+          </button>
+          <div class="website-grid" hidden>
+          <a class="website-card" href="https://cinevid.st" target="_blank" rel="noopener noreferrer nofollow" data-name="CINEVID">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=cinevid.st&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>CINEVID</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://ondemand.st" target="_blank" rel="noopener noreferrer nofollow" data-name="ONDEMAND">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=ondemand.st&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>ONDEMAND</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://thestreameast.top" target="_blank" rel="noopener noreferrer nofollow" data-name="STREAM EAST">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=thestreameast.top&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>STREAM EAST</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://stmify.com" target="_blank" rel="noopener noreferrer nofollow" data-name="STMIFY">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=stmify.com&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>STMIFY</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://famelack.com" target="_blank" rel="noopener noreferrer nofollow" data-name="FAMELACK">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=famelack.com&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>FAMELACK</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://publiciptv.com" target="_blank" rel="noopener noreferrer nofollow" data-name="PUBLIC IPTV">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=publiciptv.com&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>PUBLIC IPTV</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://en97.sportplus.watch" target="_blank" rel="noopener noreferrer nofollow" data-name="SPORTPLUS">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=en97.sportplus.watch&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>SPORTPLUS</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://streameastnow.net" target="_blank" rel="noopener noreferrer nofollow" data-name="STREAM EAST">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=streameastnow.net&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>STREAM EAST</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://fancode.com" target="_blank" rel="noopener noreferrer nofollow" data-name="fancode">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=fancode.com&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>fancode</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          </div>
+        </section>
+        <section class="site-group" data-category="kdrama">
+          <button class="group-header" type="button" aria-expanded="false">
+            <span class="group-heading-icon" aria-hidden="true">🇰🇷</span>
+            <span class="group-heading-text"><strong>K-Drama</strong><small>Explore Korean drama platforms.</small></span>
+            <span class="group-count" data-count>0</span>
+            <span class="group-arrow" aria-hidden="true">⌄</span>
+          </button>
+          <div class="website-grid" hidden>
+          <a class="website-card" href="https://dramaplanets.online" target="_blank" rel="noopener noreferrer nofollow" data-name="DRAMA PLANETS">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=dramaplanets.online&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>DRAMA PLANETS</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://viki.com" target="_blank" rel="noopener noreferrer nofollow" data-name="VIKI">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=viki.com&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>VIKI</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          <a class="website-card" href="https://kshow123.tv" target="_blank" rel="noopener noreferrer nofollow" data-name="K SHOW">
+            <img class="website-logo" src="https://www.google.com/s2/favicons?domain=kshow123.tv&amp;sz=64" alt="" loading="lazy" onerror="this.style.display='none'">
+            <div class="website-info">
+              <h3>K SHOW</h3>
+              <span class="open-website">Open Website ↗</span>
+            </div>
+          </a>
+          </div>
+        </section>
+
+        <section class="site-group" data-category="games">
+          <button class="group-header" type="button" aria-expanded="false">
+            <span class="group-heading-icon" aria-hidden="true">🎮</span>
+            <span class="group-heading-text"><strong>Games</strong><small>Explore gaming websites and services.</small></span>
+            <span class="group-count" data-count>0</span>
+            <span class="group-arrow" aria-hidden="true">⌄</span>
+          </button>
+          <div class="website-grid" hidden>
+            <div class="category-empty">
+              Websites will be added here soon.
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <p
+        class="empty-message"
+        id="emptyMessage"
+        hidden
+      >
+        No matching websites found.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+
+    <a href="#home" class="logo footer-logo-link" aria-label="NowmiFlix Home">Nowmi<span>Flix</span></a>
+
+    <p>
+      A directory to discover entertainment websites.
+    </p>
+
+    <div class="creator-badge">
+      ✦ Partha
+    </div>
+
+    <p class="copyright">
+      © 2026 NowmiFlix
+    </p>
+
+  </footer>
+
+
+  <script src="script.js" defer></script>
+
+</body>
+</html>
