@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NowmiFlix</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <span class="brand-title">Nowmi<span class="brand-accent">Flix</span></span>
+        <span class="brand-sub">by Parthx</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#top-site">Top site</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home">
+      <span class="badge-label">YOUR ENTERTAINMENT DIRECTORY</span>
+      <h1 class="hero-title">Everything You Love,<br><span class="hero-accent">One Place</span></h1>
+      <p class="hero-desc">Explore movies, anime, manga, K-drama and more, all in one place.</p>
+      <a href="#categories" class="btn-primary">Explore Categories</a>
+    </section>
+
+    <!-- SEARCH BAR -->
+    <div class="search-wrapper">
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="search" id="site-search" class="search-input" placeholder="Search websites..." autocomplete="off">
+        <button type="button" id="clear-search-btn" class="clear-search-btn" aria-label="Clear Search">&times;</button>
+      </div>
+    </div>
+
+    <!-- CATEGORY PILL SELECTOR -->
+    <section class="filter-section" id="categories">
+      <span class="sub-label">BROWSE</span>
+      <h2 class="section-title">Explore Categories</h2>
+      <p class="section-desc">Find websites based on your interests.</p>
+
+      <div class="category-pills">
+        <button class="pill active" data-category="all">All</button>
+        <button class="pill" data-category="movies">🎬 Movies & Shows</button>
+        <button class="pill" data-category="anime">⛩️ Anime</button>
+        <button class="pill" data-category="manga">📚 Manga</button>
+        <button class="pill" data-category="sports">📺 Live TV & Sports</button>
+        <button class="pill" data-category="kdrama">🇰🇷 K-Drama</button>
+      </div>
+    </section>
+
+    <!-- CATEGORY DIRECTORY -->
+    <section class="directory-section">
+      <span class="sub-label">DISCOVER</span>
+      <h2 class="section-title">Explore Websites</h2>
+      <p class="section-desc">Browse our website directory.</p>
+
+      <div class="categories-list">
+        
+        <!-- 1. MOVIES & SHOWS -->
+        <div class="category-card" data-category="movies">
+          <div class="category-card-header">
+            <div class="cat-left">
+              <div class="cat-icon-box">🎬</div>
+              <div class="cat-info">
+                <h3 class="cat-title">Movies & Shows</h3>
+                <p class="cat-sub">Stream popular and classic movies.</p>
+              </div>
+            </div>
+            <div class="cat-right">
+              <span class="cat-count">0</span>
+              <button class="cat-toggle-btn" aria-label="Toggle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="category-content">
+            <p class="empty-msg">Websites will be added here soon.</p>
+          </div>
+        </div>
+
+        <!-- 2. ANIME (EXPANDED BY DEFAULT) -->
+        <div class="category-card expanded" data-category="anime">
+          <div class="category-card-header">
+            <div class="cat-left">
+              <div class="cat-icon-box">⛩️</div>
+              <div class="cat-info">
+                <h3 class="cat-title">Anime</h3>
+                <p class="cat-sub">Explore anime series and movies.</p>
+              </div>
+            </div>
+            <div class="cat-right">
+              <span class="cat-count">0</span>
+              <button class="cat-toggle-btn" aria-label="Toggle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="category-content">
+            <div class="websites-grid">
+              
+              <div class="website-card">
+                <div class="logo-box">
+                  <span class="logo-text blue">ENMA</span>
+                </div>
+                <h4 class="website-name">ENMA</h4>
+                <a href="https://enma.to" target="_blank" rel="noopener noreferrer" class="btn-visit">Open Website &rarr;</a>
+              </div>
+
+              <div class="website-card">
+                <div class="logo-box">
+                  <span class="logo-shape">&Delta;</span>
+                </div>
+                <h4 class="website-name">YENIME</h4>
+                <a href="https://yenime.com" target="_blank" rel="noopener noreferrer" class="btn-visit">Open Website &rarr;</a>
+              </div>
+
+              <div class="website-card">
+                <div class="logo-box">
+                  <span class="logo-text tech">][</span>
+                </div>
+                <h4 class="website-name">JUST ANIME</h4>
+                <a href="https://justanime.to" target="_blank" rel="noopener noreferrer" class="btn-visit">Open Website &rarr;</a>
+              </div>
+
+              <div class="website-card">
+                <div class="logo-box">
+                  <span class="logo-text pink">RS</span>
+                </div>
+                <h4 class="website-name">ANIME SALT</h4>
+                <a href="https://animesalt.com" target="_blank" rel="noopener noreferrer" class="btn-visit">Open Website &rarr;</a>
+              </div>
+
+              <div class="website-card">
+                <div class="logo-box">
+                  <span class="logo-circle">&bull;</span>
+                </div>
+                <h4 class="website-name">animenix</h4>
+                <a href="https://animenix.com" target="_blank" rel="noopener noreferrer" class="btn-visit">Open Website &rarr;</a>
+              </div>
+
+              <div class="website-card">
+                <div class="logo-box">
+                  <span class="logo-icon-orange">&#9881;</span>
+                </div>
+                <h4 class="website-name">OTAKIX</h4>
+                <a href="https://otakix.com" target="_blank" rel="noopener noreferrer" class="btn-visit">Open Website &rarr;</a>
+              </div>
+
+              <div class="website-card">
+                <div class="logo-box round purple">
+                  <span class="logo-text white">h!</span>
+                </div>
+                <h4 class="website-name">HiAnime</h4>
+                <a href="https://hianime.to" target="_blank" rel="noopener noreferrer" class="btn-visit">Open Website &rarr;</a>
+              </div>
+
+              <div class="website-card">
+                <div class="logo-box round light">
+                  <span class="logo-text dark">&Aring;</span>
+                </div>
+                <h4 class="website-name">Animeshu</h4>
+                <a href="https://animeshu.to" target="_blank" rel="noopener noreferrer" class="btn-visit">Open Website &rarr;</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. MANGA -->
+        <div class="category-card" data-category="manga">
+          <div class="category-card-header">
+            <div class="cat-left">
+              <div class="cat-icon-box">📚</div>
+              <div class="cat-info">
+                <h3 class="cat-title">Manga</h3>
+                <p class="cat-sub">Read popular and classic manga.</p>
+              </div>
+            </div>
+            <div class="cat-right">
+              <span class="cat-count">0</span>
+              <button class="cat-toggle-btn" aria-label="Toggle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="category-content">
+            <p class="empty-msg">Websites will be added here soon.</p>
+          </div>
+        </div>
+
+        <!-- 4. LIVE TV & SPORTS -->
+        <div class="category-card" data-category="sports">
+          <div class="category-card-header">
+            <div class="cat-left">
+              <div class="cat-icon-box">📺</div>
+              <div class="cat-info">
+                <h3 class="cat-title">Live TV & Sports</h3>
+                <p class="cat-sub">Stream live TV & sports channels.</p>
+              </div>
+            </div>
+            <div class="cat-right">
+              <span class="cat-count">0</span>
+              <button class="cat-toggle-btn" aria-label="Toggle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="category-content">
+            <p class="empty-msg">Websites will be added here soon.</p>
+          </div>
+        </div>
+
+        <!-- 5. K-DRAMA -->
+        <div class="category-card" data-category="kdrama">
+          <div class="category-card-header">
+            <div class="cat-left">
+              <div class="cat-icon-box">🇰🇷</div>
+              <div class="cat-info">
+                <h3 class="cat-title">K-Drama</h3>
+                <p class="cat-sub">Watch latest Korean series.</p>
+              </div>
+            </div>
+            <div class="cat-right">
+              <span class="cat-count">0</span>
+              <button class="cat-toggle-btn" aria-label="Toggle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="category-content">
+            <p class="empty-msg">Websites will be added here soon.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-brand">Nowmi<span class="brand-accent">Flix</span></div>
+    <p class="footer-text">A stream is freely open on emphasized websites.</p>
+    <a href="#" class="creator-badge">&#9733; Parthx</a>
+    <p class="copyright">&copy; 2026 NowmiFlix</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
