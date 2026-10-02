@@ -308,24 +308,36 @@ body {
 }
 
 
-/* Expandable category headers and compact website cards */
+/* Expandable category headers and website cards */
+
 .site-groups {
   display: grid;
   gap: 13px;
 }
+
 .site-group {
   min-width: 0;
   border: 1px solid var(--border);
   border-radius: 13px;
   background: var(--surface);
   overflow: hidden;
+  transition: border-color .2s ease, box-shadow .2s ease;
 }
+
+.site-group.expanded {
+  border-color: #1b5a76;
+  box-shadow: 0 0 0 1px rgba(22, 199, 178, .05);
+}
+
 .site-group[hidden],
 .website-card[hidden] {
   display: none !important;
 }
+
+/* The complete category card is clickable. */
 .group-header {
   width: 100%;
+  min-height: 86px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -335,132 +347,247 @@ body {
   color: inherit;
   background: transparent;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
+
 .group-header:hover,
+.group-header:focus-visible,
 .site-group.expanded .group-header {
-  background: #1a2230;
+  background: #111b2a;
 }
+
+.group-header:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
 .group-heading-icon {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   display: grid;
   place-items: center;
-  flex: 0 0 42px;
-  border-radius: 11px;
-  background: #1d2933;
-  font-size: 21px;
+  flex: 0 0 48px;
+  border-radius: 13px;
+  background: #111a28;
+  border: 1px solid var(--border);
+  font-size: 24px;
 }
+
 .group-heading-text {
   flex: 1;
   min-width: 0;
   display: flex;
   flex-direction: column;
 }
+
 .group-heading-text strong {
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.35;
 }
+
 .group-heading-text small {
   margin-top: 3px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.4;
 }
+
 .group-count {
-  min-width: 28px;
-  height: 28px;
-  padding: 0 7px;
+  min-width: 34px;
+  height: 30px;
+  padding: 0 8px;
   display: inline-grid;
   place-items: center;
-  border-radius: 999px;
-  background: #203a3a;
-  color: var(--accent-light);
-  font-size: 12px;
+  border: 1px solid #006b99;
+  border-radius: 8px;
+  background: #0b2030;
+  color: #2ed5ff;
+  font-size: 13px;
   font-weight: 700;
 }
+
 .group-arrow {
-  width: 30px;
-  height: 30px;
-  flex: 0 0 30px;
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
   display: grid;
   place-items: center;
-  border: 1px solid var(--border);
+  border: 2px solid #285476;
   border-radius: 50%;
-  color: var(--accent-light);
-  font-size: 23px;
-  line-height: 1;
-  transform: rotate(0deg);
-  transition: transform .2s ease, background .2s ease;
+  color: #f2f7ff;
+  position: relative;
+  font-size: 0;
+  transition: background .2s ease, border-color .2s ease;
 }
+
+.group-arrow::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-right: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform .2s ease;
+}
+
 .group-header[aria-expanded="true"] .group-arrow {
-  transform: rotate(180deg);
-  background: #203a3a;
+  background: #102f3c;
+  border-color: #2a8c97;
 }
+
+.group-header[aria-expanded="true"] .group-arrow::before {
+  transform: rotate(225deg) translate(-2px, -2px);
+}
+
 .website-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  padding: 0 13px 13px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  padding: 0 28px 28px;
 }
+
 .website-card {
   min-width: 0;
+  min-height: 165px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 12px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: #101622;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid #22334a;
+  border-radius: 16px;
+  background: #0f1725;
   color: inherit;
   text-decoration: none;
-  transition: border-color .2s, transform .2s;
+  text-align: center;
+  transition: border-color .2s, transform .2s, background .2s;
+  -webkit-tap-highlight-color: transparent;
 }
+
 .website-card:hover {
   border-color: var(--accent);
+  background: #111c2d;
   transform: translateY(-2px);
 }
+
 .website-logo {
-  width: 34px;
-  height: 34px;
-  flex: 0 0 34px;
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
   object-fit: contain;
-  border-radius: 8px;
-  background: #202938;
+  border-radius: 14px;
+  background: #080c14;
+  border: 1px solid #26354a;
 }
+
 .website-info {
+  width: 100%;
   min-width: 0;
 }
+
 .website-info h3 {
   overflow-wrap: anywhere;
-  font-size: 13px;
+  font-size: 17px;
   line-height: 1.35;
 }
+
 .open-website {
-  display: inline-block;
-  margin-top: 5px;
-  color: var(--accent-light);
-  font-size: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 9px;
+  padding: 9px 10px;
+  border: 1px solid #6440d9;
+  border-radius: 999px;
+  background: #151337;
+  color: #c8baff;
+  font-size: 13px;
   font-weight: 700;
 }
+
 .category-empty {
   grid-column: 1 / -1;
   padding: 9px 2px;
   color: var(--muted);
   font-size: 12px;
+  text-align: center;
 }
-@media (max-width: 900px) {
-  .website-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+@media (max-width: 700px) {
+  .group-header {
+    min-height: 78px;
+    gap: 9px;
+    padding: 13px 11px;
+  }
+
+  .group-heading-icon {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+    font-size: 21px;
+  }
+
+  .group-heading-text strong {
+    font-size: 15px;
+  }
+
+  .group-heading-text small {
+    font-size: 10px;
+  }
+
+  .group-count {
+    min-width: 30px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .group-arrow {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+  }
+
+  .website-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 0 10px 12px;
+  }
+
+  .website-card {
+    min-height: 155px;
+    padding: 12px 9px;
+    border-radius: 13px;
+  }
+
+  .website-logo {
+    width: 50px;
+    height: 50px;
+    flex-basis: 50px;
+  }
+
+  .website-info h3 {
+    font-size: 13px;
+  }
+
+  .open-website {
+    font-size: 10px;
+    padding: 8px 5px;
+  }
 }
-@media (max-width: 600px) {
-  .group-header { gap: 9px; padding: 13px 11px; }
-  .group-heading-icon { width: 36px; height: 36px; flex-basis: 36px; font-size: 19px; }
-  .group-heading-text strong { font-size: 14px; }
-  .group-heading-text small { font-size: 10px; }
-  .website-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding: 0 9px 10px; }
-  .website-card { flex-direction: column; align-items: flex-start; gap: 7px; padding: 10px; }
-  .website-logo { width: 30px; height: 30px; flex-basis: 30px; }
-  .website-info h3 { font-size: 12px; }
-  .open-website { font-size: 10px; }
+
+/* Hide the browser's second/native X on search inputs.
+   NowmiFlix uses its own single clear-search button. */
+.search-box input[type="search"]::-webkit-search-cancel-button,
+.search-box input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.search-box input[type="search"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 /* Footer */
