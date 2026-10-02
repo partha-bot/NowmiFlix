@@ -1,40 +1,42 @@
 document.addEventListener("DOMContentLoaded", function () {
-  "use strict";
+  const groups = document.querySelectorAll(".site-group");
+  const categoryButtons = document.querySelectorAll(".category");
 
   const searchInput = document.getElementById("searchInput");
   const clearSearch = document.getElementById("clearSearch");
   const resultText = document.getElementById("resultText");
   const emptyMessage = document.getElementById("emptyMessage");
 
-  const categoryButtons = Array.from(
-    document.querySelectorAll(".category")
-  );
-
-  const groups = Array.from(
-    document.querySelectorAll(".site-group")
-  );
-
   let selectedCategory = "all";
 
 
-  /* =========================================
-     CATEGORY OPEN / CLOSE
-  ========================================= */
+  /* ==============================
+     OPEN / CLOSE CATEGORY
+  ============================== */
 
-  function setGroupOpen(group, open) {
+  function openGroup(group) {
     const header = group.querySelector(".group-header");
     const grid = group.querySelector(".website-grid");
 
     if (!header || !grid) return;
 
-    header.setAttribute(
-      "aria-expanded",
-      open ? "true" : "false"
-    );
+    header.setAttribute("aria-expanded", "true");
+    grid.hidden = false;
 
-    grid.hidden = !open;
+    group.classList.add("expanded");
+  }
 
-    group.classList.toggle("expanded", open);
+
+  function closeGroup(group) {
+    const header = group.querySelector(".group-header");
+    const grid = group.querySelector(".website-grid");
+
+    if (!header || !grid) return;
+
+    header.setAttribute("aria-expanded", "false");
+    grid.hidden = true;
+
+    group.classList.remove("expanded");
   }
 
 
@@ -43,363 +45,240 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!header) return;
 
-    const isOpen =
+    const opened =
       header.getAttribute("aria-expanded") === "true";
 
-    setGroupOpen(group, !isOpen);
+    if (opened) {
+      closeGroup(group);
+    } else {
+      openGroup(group);
+    }
   }
 
 
-  /* =========================================
-     WEBSITE COUNT
-  ========================================= */
+  /* ==============================
+     COUNT
+  ============================== */
 
-  function updateCounts() {
-    groups.forEach(function (group) {
-      const countElement =
-        group.querySelector("[data-count]");
+  groups.forEach(function (group) {
 
-      const cards =
-        group.querySelectorAll(".website-card");
+    const count = group.querySelector("[data-count]");
+    const cards = group.querySelectorAll(".website-card");
 
-      if (countElement) {
-        countElement.textContent = cards.length;
-      }
+    if (count) {
+      count.textContent = cards.length;
+    }
+
+  });
+
+
+  /* ==============================
+     EXPLORE WEBSITE CARD CLICK
+  ============================== */
+
+  groups.forEach(function (group) {
+
+    const header = group.querySelector(".group-header");
+
+    if (!header) return;
+
+    header.addEventListener("click", function () {
+      toggleGroup(group);
     });
-  }
+
+  });
 
 
-  /* =========================================
-     SEARCHABLE TEXT
-  ========================================= */
+  /* ==============================
+     EXPLORE CATEGORIES
+  ============================== */
 
-  function getSearchText(card) {
-    return [
-      card.dataset.name || "",
-      card.textContent || "",
-      card.getAttribute("href") || ""
-    ]
-      .join(" ")
-      .toLowerCase();
-  }
+  categoryButtons.forEach(function (button) {
 
+    button.addEventListener("click", function () {
 
-  /* =========================================
-     CLEAR BUTTON
-  ========================================= */
+      categoryButtons.forEach(function (item) {
+        item.classList.remove("active");
+      });
 
-  function updateClearButton() {
-    if (!clearSearch) return;
+      button.classList.add("active");
 
-    const hasText =
-      searchInput &&
-      searchInput.value.trim().length > 0;
-
-    clearSearch.hidden = !hasText;
-  }
+      selectedCategory =
+        (button.dataset.category || "all").toLowerCase();
 
 
-  /* =========================================
-     FILTER
-  ========================================= */
+      groups.forEach(function (group) {
 
-  function applyFilters(autoOpen = false) {
-    if (!searchInput) return;
+        const groupCategory =
+          (group.dataset.category || "").toLowerCase();
 
-    const query =
-      searchInput.value.trim().toLowerCase();
+        if (
+          selectedCategory === "all" ||
+          groupCategory === selectedCategory
+        ) {
 
-    let totalVisible = 0;
-    let visibleGroups = 0;
+          group.hidden = false;
 
-    groups.forEach(function (group) {
+        } else {
 
-      const groupCategory =
-        (group.dataset.category || "")
-          .trim()
-          .toLowerCase();
+          group.hidden = true;
+          closeGroup(group);
 
-      const categoryMatches =
-        selectedCategory === "all" ||
-        groupCategory === selectedCategory;
-
-      const cards = Array.from(
-        group.querySelectorAll(".website-card")
-      );
-
-      let matchingCards = 0;
-
-
-      /* Check each website */
-
-      cards.forEach(function (card) {
-
-        const matches =
-          categoryMatches &&
-          (
-            query === "" ||
-            getSearchText(card).includes(query)
-          );
-
-        card.hidden = !matches;
-
-        if (matches) {
-          matchingCards++;
-          totalVisible++;
         }
 
       });
 
 
-      /*
-        Category without websites যেমন Games:
-        category নিজে দেখাবে, কিন্তু card থাকবে না।
-      */
+      /* Selected category automatically opens */
 
-      const isEmptyCategory =
-        cards.length === 0;
+      if (selectedCategory !== "all") {
 
-      const shouldShow =
-        categoryMatches &&
-        (
+        groups.forEach(function (group) {
+
+          const groupCategory =
+            (group.dataset.category || "").toLowerCase();
+
+          if (groupCategory === selectedCategory) {
+            openGroup(group);
+          }
+
+        });
+
+      }
+
+
+      const sites =
+        document.getElementById("sites");
+
+      if (sites) {
+
+        sites.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }
+
+    });
+
+  });
+
+
+  /* ==============================
+     SEARCH
+  ============================== */
+
+  function searchWebsites() {
+
+    const query =
+      searchInput
+        ? searchInput.value.trim().toLowerCase()
+        : "";
+
+    let found = 0;
+
+
+    groups.forEach(function (group) {
+
+      const cards =
+        group.querySelectorAll(".website-card");
+
+      let groupFound = 0;
+
+
+      cards.forEach(function (card) {
+
+        const name =
+          (card.dataset.name || "").toLowerCase();
+
+        const text =
+          card.textContent.toLowerCase();
+
+        const href =
+          (card.getAttribute("href") || "").toLowerCase();
+
+        const matches =
           query === "" ||
-          matchingCards > 0
-        );
+          name.includes(query) ||
+          text.includes(query) ||
+          href.includes(query);
 
 
-      group.hidden = !shouldShow;
+        card.hidden = !matches;
 
 
-      if (shouldShow) {
-        visibleGroups++;
-      }
+        if (matches) {
+          groupFound++;
+          found++;
+        }
+
+      });
 
 
-      /* Auto open selected/search result */
+      if (query === "") {
 
-      if (
-        shouldShow &&
-        (
-          query !== "" ||
-          autoOpen
-        )
-      ) {
-        setGroupOpen(group, true);
-      }
+        group.hidden =
+          !(
+            selectedCategory === "all" ||
+            group.dataset.category === selectedCategory
+          );
 
+      } else if (groupFound > 0) {
 
-      /*
-        Search result না থাকলে category close
-      */
+        group.hidden = false;
+        openGroup(group);
 
-      if (
-        query !== "" &&
-        matchingCards === 0
-      ) {
-        setGroupOpen(group, false);
-      }
+      } else {
 
-
-      /*
-        Empty category-তে search করলে
-        category hide হবে।
-      */
-
-      if (
-        query !== "" &&
-        isEmptyCategory
-      ) {
         group.hidden = true;
+        closeGroup(group);
+
       }
 
     });
 
 
-    /* =========================================
-       RESULT TEXT
-    ========================================= */
-
-    if (query !== "") {
+    if (resultText) {
 
       resultText.textContent =
-        totalVisible +
-        " website" +
-        (totalVisible === 1 ? "" : "s") +
-        " found";
-
-    } else if (selectedCategory === "all") {
-
-      resultText.textContent =
-        totalVisible +
-        " websites available across " +
-        visibleGroups +
-        " categories";
-
-    } else {
-
-      resultText.textContent =
-        totalVisible +
-        " website" +
-        (totalVisible === 1 ? "" : "s") +
-        " in " +
-        selectedCategory;
+        query
+          ? `${found} website${found === 1 ? "" : "s"} found`
+          : "Browse our website directory.";
 
     }
 
-
-    /* Empty search message */
 
     if (emptyMessage) {
+
       emptyMessage.hidden =
-        !(query !== "" && totalVisible === 0);
+        !(query && found === 0);
+
     }
 
 
-    updateClearButton();
+    if (clearSearch) {
+
+      clearSearch.hidden =
+        !query;
+
+    }
+
   }
 
 
-  /* =========================================
-     EXPLORE WEBSITE CATEGORY CLICK
-  ========================================= */
-
-  groups.forEach(function (group) {
-
-    const header =
-      group.querySelector(".group-header");
-
-    if (!header) return;
-
-
-    /*
-      পুরো category card clickable
-    */
-
-    header.addEventListener(
-      "click",
-      function (event) {
-
-        /*
-          Website link থাকলে সেটার click আটকাবে না
-        */
-
-        if (event.target.closest("a")) {
-          return;
-        }
-
-        toggleGroup(group);
-      }
-    );
-
-
-    /*
-      Keyboard support
-    */
-
-    header.addEventListener(
-      "keydown",
-      function (event) {
-
-        if (
-          event.key === "Enter" ||
-          event.key === " "
-        ) {
-          event.preventDefault();
-          toggleGroup(group);
-        }
-
-      }
-    );
-
-  });
-
-
-  /* =========================================
-     EXPLORE CATEGORIES
-  ========================================= */
-
-  categoryButtons.forEach(function (button) {
-
-    button.addEventListener(
-      "click",
-      function (event) {
-
-        event.preventDefault();
-
-        categoryButtons.forEach(
-          function (item) {
-            item.classList.remove("active");
-          }
-        );
-
-        button.classList.add("active");
-
-
-        selectedCategory =
-          (
-            button.dataset.category ||
-            "all"
-          )
-            .trim()
-            .toLowerCase();
-
-
-        applyFilters(
-          selectedCategory !== "all"
-        );
-
-
-        /* Scroll to Explore Websites */
-
-        const sites =
-          document.getElementById("sites");
-
-        if (sites) {
-
-          setTimeout(function () {
-
-            sites.scrollIntoView({
-              behavior: "smooth",
-              block: "start"
-            });
-
-          }, 80);
-
-        }
-
-      }
-    );
-
-  });
-
-
-  /* =========================================
-     SEARCH INPUT
-  ========================================= */
+  /* Search typing */
 
   if (searchInput) {
 
     searchInput.addEventListener(
       "input",
-      function () {
-        applyFilters(false);
-      }
-    );
-
-
-    searchInput.addEventListener(
-      "search",
-      function () {
-        applyFilters(false);
-      }
+      searchWebsites
     );
 
   }
 
 
-  /* =========================================
-     CLEAR SEARCH
-  ========================================= */
+  /* Clear */
 
   if (clearSearch) {
 
@@ -412,7 +291,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         searchInput.value = "";
 
-        applyFilters(false);
+        searchWebsites();
 
         searchInput.focus();
 
@@ -422,12 +301,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  /* =========================================
-     INITIAL LOAD
-  ========================================= */
+  /* ==============================
+     INITIAL
+  ============================== */
 
-  updateCounts();
+  groups.forEach(function (group) {
+    closeGroup(group);
+  });
 
-  applyFilters(false);
+  if (clearSearch) {
+    clearSearch.hidden = true;
+  }
 
 });
