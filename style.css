@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #0b0f19;
+  color: #f1f5f9;
+  min-height: 100vh;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  background-color: rgba(11, 15, 25, 0.95);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #1e293b;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.logo h1 span {
+  color: #2dd4bf;
+}
+
+.by-tag {
+  font-size: 0.65rem;
+  color: #64748b;
+  display: block;
+  margin-top: -3px;
+}
+
+.nav-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin-left: 16px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a.active, .nav-links a:hover {
+  color: #2dd4bf;
+}
+
+/* Hero Section */
+.hero {
+  padding: 40px 20px 25px;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #2dd4bf;
+  margin-bottom: 12px;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #2dd4bf, #38bdf8);
+  -webkit-background-clip: text;
+  -we
