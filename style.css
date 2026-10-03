@@ -60,23 +60,6 @@ body {
   letter-spacing: -1px;
 }
 
-.logo-image-link {
-  display: flex;
-  align-items: center;
-  width: 150px;
-  height: 62px;
-  flex: 0 0 150px;
-  overflow: hidden;
-}
-
-.brand-logo {
-  display: block;
-  width: 150px;
-  height: 62px;
-  object-fit: contain;
-  object-position: center;
-}
-
 .logo span {
   color: var(--accent);
 }
@@ -638,17 +621,6 @@ footer .logo {
   font-size: 22px;
 }
 
-.footer-logo-link {
-  width: 170px;
-  height: 70px;
-  margin: 0 auto;
-}
-
-.footer-brand-logo {
-  width: 170px;
-  height: 70px;
-}
-
 footer p {
   color: var(--muted);
   font-size: 12px;
@@ -693,17 +665,6 @@ footer .copyright {
 
   .logo {
     font-size: 22px;
-  }
-
-  .logo-image-link {
-    width: 118px;
-    height: 50px;
-    flex-basis: 118px;
-  }
-
-  .brand-logo {
-    width: 118px;
-    height: 50px;
   }
 
   .navbar nav {
