@@ -10,9 +10,6 @@
         content="Discover movies, anime, manga, K-drama and more with NowmiFlix.">
 
   <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" type="image/png" sizes="192x192" href="icons/nowmiflix-192.png">
-  <link rel="apple-touch-icon" href="icons/nowmiflix-192.png">
 </head>
 
 <body>
@@ -20,7 +17,9 @@
   <header class="navbar">
 
     <div class="logo-wrap">
-      <a href="#home" class="logo" aria-label="NowmiFlix Home">Nowmi<span>Flix</span></a>
+      <div class="logo">
+        Nowmi<span>Flix</span>
+      </div>
 
       <div class="logo-author">
         by Partha
@@ -756,7 +755,12 @@
   <!-- Footer -->
   <footer>
 
-    <a href="#home" class="logo footer-logo-link" aria-label="NowmiFlix Home">Nowmi<span>Flix</span></a>
+    <a
+      href="#home"
+      class="logo"
+    >
+      Nowmi<span>Flix</span>
+    </a>
 
     <p>
       A directory to discover entertainment websites.
@@ -775,11 +779,5 @@
 
   <script src="script.js" defer></script>
 
-
-<script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js").catch(() => {}));
-}
-</script>
 </body>
 </html>
