@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
   "use strict";
 
@@ -430,4 +431,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   applyFilters(false);
 
+});
+
+
+/* Defensive category state sync */
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".site-group").forEach(function (group) {
+    const header = group.querySelector(".group-header");
+    const grid = group.querySelector(".website-grid");
+    if (!header || !grid) return;
+    const open = header.getAttribute("aria-expanded") === "true";
+    grid.hidden = !open;
+  });
 });
